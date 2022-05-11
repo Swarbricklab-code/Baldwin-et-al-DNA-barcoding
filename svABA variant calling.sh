@@ -1,4 +1,4 @@
-# Detection of structural genomew-wide structural variants using SvABA
+# Detection of structural genome-wide structural variants using SvABA
 
 # 20220511
 # Louise Baldwin
