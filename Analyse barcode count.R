@@ -131,13 +131,9 @@ shannon<-function(data){
   return(rbind(plot.number,H))
 }
 
-
-#dataAggregateshort = data sample short
-
 t_IT=shannon(t(dataAggregateShort1))[2,]
 t_CONT=shannon(t(dataAggregateShort2))[2,]
 t_NSG=shannon(t(dataAggregateShort3))[2,]
-
 
 df<-rbind(t_NSG,t_CONT,t_IT)
 df=t(df)
