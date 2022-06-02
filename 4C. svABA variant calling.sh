@@ -1,12 +1,23 @@
 #!/bin/bash
 
-module load gi/gcc/4.8.2
-module load gi/samtools/1.0
-module load gi/novosort/precompiled/1.03.08
+# Detection of structural genome-wide structural variants using SvABA
 
-numcores=30
-tag="-P TumourProgression"
-#tag=""
+# 20220511
+# Louise Baldwin
+
+# Input: sorted.bam files
+# Output: .csv listing variations to reference genome
+
+
+#--------------------------------------------------------
+
+# module load gi/gcc/4.8.2
+# module load gi/samtools/1.0
+# module load gi/novosort/precompiled/1.03.08
+
+# numcores=30
+# tag="-P TumourProgression"
+# #tag=""
 
 homedir="/share/ScratchGeneral/loubal"
 projectDir="$homedir/projects/WGS"
@@ -16,7 +27,7 @@ logDir="$scriptsPath/logs"
 mkdir -p $resultsDir
 mkdir -p $logDir
 
-genomeFile="/share/ScratchGeneral/loubal/projects/WGS/genomes/mm10.fa" 
+genomeFile="/share/ScratchGeneral/loubal/projects/WGS/genomes/BALB_cJ_v1.fa" 
 projectnames=( "4T1_WGS" )
 
 i=0
