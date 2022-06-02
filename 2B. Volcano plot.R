@@ -1,4 +1,11 @@
+# Script for the generation of a volcano plot of DGE resulting from bulk RNA Seq data
 
+# Input files: text tables from EdgeR DGE analysis
+# Output files: ggplot volanco plots
+
+# Usage in paper fig 5A, 5B
+
+# --------------------------------------------------------------
 library(ggplot2)
 library(ggrepel)
 timeStamp <- format(Sys.time(), "%Y_%m_%d")
@@ -66,7 +73,7 @@ ggplot(data1_ordered) +
 dev.off()
 
 
-
+#-------------------------------------------------------------
 
 
 
