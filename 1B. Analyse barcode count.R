@@ -32,30 +32,31 @@ tabDir=paste0("../tables")
 
 cutoff=0.0001
 
+# ##########
+# #data tidying step - only necessary when ClonTracer has been run lane by lane, not sample by sample
 
-#data tidying
-
-matrix <- read.table("matrix_table.txt")
+# matrix <- read.table("matrix_count.txt")
  
-#need to collapse columns by seq lane read
+# #need to collapse columns by seq lane read
 
-colnames <- colnames(matrix)
-colnames <- str_replace(colnames, pattern = "_L001.ds", "")
-colnames <- str_replace(colnames, pattern = "_L002.ds", "")
-colnames <- str_replace(colnames, pattern = "_L003.ds", "")
-colnames <- str_replace(colnames, pattern = "_L004.ds", "")
+# colnames <- colnames(matrix)
+# colnames <- str_replace(colnames, pattern = "_L001.ds", "")
+# colnames <- str_replace(colnames, pattern = "_L002.ds", "")
+# colnames <- str_replace(colnames, pattern = "_L003.ds", "")
+# colnames <- str_replace(colnames, pattern = "_L004.ds", "")
 
-colnames(matrix) <- colnames
-#collapse by column name
-test <- pivot_longer(matrix, cols=2:37, names_to = "sample", values_to = "counts")
-test2 <- test %>% group_by(Barcode, sample) %>% summarise_all(sum)
-new_matrix <- pivot_wider(test2, names_from = sample, values_from = counts)
+# colnames(matrix) <- colnames
+# #collapse by column name
+# test <- pivot_longer(matrix, cols=2:37, names_to = "sample", values_to = "counts")
+# test2 <- test %>% group_by(Barcode, sample) %>% summarise_all(sum)
+# new_matrix <- pivot_wider(test2, names_from = sample, values_from = counts)
 
-write.csv(x = new_matrix, file = "../R1_only/merged_data.csv" )
+# write.csv(x = new_matrix, file = "./new_matrix_count.csv" )
+########
 
-#read in tidied matrix
 
-dataSample <- read.csv("./merged_data.csv", header = T, row.names = 1)
+#read in  matrix
+dataSample <- read.csv("./matrix_count.csv", header = T, row.names = 1)
 dataSample<-as.matrix(dataSample)
 dataSampleShort<-dataSample
 
