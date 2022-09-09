@@ -1,6 +1,6 @@
 # Baldwin-et-al-DNA-barcoding
 
-This respository contains code related to data processing and downstream analysis of data assocaited with the study "DNA barcoding reveals ongoing immunoediting of clonal cancer populations during metastatic progression and in response to immunotherapy" by Baldwin et al at Nature Communications. 
+This respository contains code related to data processing and downstream analysis of data assocaited with the study "DNA barcoding reveals ongoing immunoediting of clonal cancer populations during metastatic progression and immunotherapy response" by Baldwin et al at Nature Communications. 
 
 ## Data availability
 All DNA sequencing (whole genome and barcode sequencing data) and RNA sequencing FASTQs and relevant intermediary files are deposited on GEO (accession number XXX)
